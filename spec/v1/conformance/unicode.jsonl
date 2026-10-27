@@ -1,0 +1,4 @@
+{"id":"unicode.accent-preserved","input":"Dra. Lucía Núñez","expected":"Lucía Núñez"}
+{"id":"unicode.decomposed-accent-preserved","input":"Dr. Café García","expected":"Café García"}
+{"id":"unicode.hyphen-apostrophe-preserved","input":"Mr. Jean-Pierre O'Connor","expected":"Jean-Pierre O'Connor"}
+{"id":"whitespace.no-match-preserved","input":"  Unknown Name  ","expected":"  Unknown Name  "}

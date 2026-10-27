@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:acrotrim:spec:v1:rule-schema",
+  "title": "AcroTrim v1 trim rule",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "id", "lang", "term", "match"],
+  "properties": {
+    "schemaVersion": { "const": "1.0" },
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$" },
+    "lang": {
+      "type": "string",
+      "description": "Language tag for optional runtime filtering; use und when undetermined. Literal rules must use a concrete language or region tag.",
+      "pattern": "^[A-Za-z]{2,3}(-[A-Za-z0-9]{2,8})*$"
+    },
+    "term": { "type": "string", "minLength": 1 },
+    "match": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["punctuationVariants", "leadingSeparators"],
+      "properties": {
+        "punctuationVariants": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "pattern": "^[.!?·]*$" } },
+        "leadingSeparators": { "type": "array", "uniqueItems": true, "items": { "enum": [",", ";", ":", "–", "—"] } }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:acrotrim:spec:v1:regexp-rule-schema",
+  "title": "AcroTrim v1 regular-expression rule",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "id", "lang", "pattern"],
+  "properties": {
+    "schemaVersion": { "const": "1.0" },
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$" },
+    "lang": { "type": "string", "pattern": "^[A-Za-z]{2,3}(-[A-Za-z0-9]{2,8})*$" },
+    "pattern": { "const": "\\w{1,10}\\." }
+  }
+}

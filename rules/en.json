@@ -1,0 +1,37 @@
+[
+  {
+    "schemaVersion": "1.0",
+    "id": "prefix.en.single-word",
+    "lang": "en",
+    "match": {
+      "punctuationVariants": [
+        "",
+        "."
+      ],
+      "leadingSeparators": []
+    },
+    "terms": [
+      "Sr", "Mr", "Ms", "Mrs", "Jr",
+      "Dr", "Prof"
+    ]
+  },
+  {
+    "schemaVersion": "1.0",
+    "id": "suffix.en.company",
+    "lang": "en",
+    "match": {
+      "punctuationVariants": [
+        "",
+        "."
+      ],
+      "leadingSeparators": [
+        ","
+      ]
+    },
+    "terms": [
+      "Inc",
+      "Ltd",
+      "Co"
+    ]
+  }
+]

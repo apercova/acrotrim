@@ -1,0 +1,27 @@
+{"id":"prefix.mr","input":"Mr. John Smith","expected":"John Smith"}
+{"id":"prefix.multiple","input":"Dr. Prof. Ana López","expected":"Ana López"}
+{"id":"prefix.spanish","input":"Dra. Lucía Núñez","expected":"Lucía Núñez"}
+{"id":"prefix.professional","input":"Ing. Carlos Pérez","expected":"Carlos Pérez"}
+{"id":"prefix.without-period","input":"Mrs Ana de la Cruz","expected":"Ana de la Cruz"}
+{"id":"suffix.inc","input":"ACME Inc.","expected":"ACME"}
+{"id":"suffix.ltd","input":"ACME Ltd.","expected":"ACME"}
+{"id":"suffix.comma-inc","input":"ACME, Inc.","expected":"ACME"}
+{"id":"suffix.compound","input":"Acme S.A. de C.V.","expected":"Acme"}
+{"id":"suffix.jr","input":"John Smith Jr.","expected":"John Smith"}
+{"id":"boundary.internal-word-preserved","input":"The Doctor Company","expected":"The Doctor Company"}
+{"id":"boundary.unknown-prefix-preserved","input":"ProfX Ana Silva","expected":"ProfX Ana Silva"}
+{"id":"boundary.ambiguous-preserved","input":"Est. 1985","expected":"Est. 1985"}
+{"id":"whitespace.no-match-preserved","input":"  Unknown Name  ","expected":"  Unknown Name  "}
+{"id":"regexp.suffix-disabled-by-default","input":"Company Name.","expected":"Company Name."}
+{"id":"regexp.prefix-disabled-by-default","input":"Doctor. Philip","expected":"Doctor. Philip"}
+{"id":"regexp.suffix-word","input":"Company Name.","strict":true,"expected":"Company"}
+{"id":"regexp.prefix-word","input":"Doctor. Philip","strict":true,"expected":"Philip"}
+{"id":"regexp.ten-character-limit","input":"ABCDEFGHIJ. Name","strict":true,"expected":"Name"}
+{"id":"regexp.over-ten-character-limit-preserved","input":"ABCDEFGHIJK. Name","strict":true,"expected":"ABCDEFGHIJK. Name"}
+{"id":"regexp.longest-literal-compound-wins","input":"Acme S.A. de C.V.","strict":true,"expected":"Acme"}
+{"id":"lang.regional-parent-fallback","input":"Sra. Ana López","lang":"es-MX","expected":"Ana López"}
+{"id":"lang.region-specific","input":"Acme S.A. de C.V.","lang":"es","expected":"Acme"}
+{"id":"lang.region-specific","input":"Acme S.A. de C.V.","lang":"ES-mX","expected":"Acme"}
+{"id":"lang.excludes-other-language","input":"Mr. Jane Smith","lang":"fr","expected":"Mr. Jane Smith"}
+{"id":"lang.regex-remains-general","input":"Doctor. Philip","lang":"fr","strict":true,"expected":"Philip"}
+{"id":"lang.invalid","input":"A","lang":"es_MX","expectedError":"invalid_input"}

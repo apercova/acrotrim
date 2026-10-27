@@ -1,0 +1,23 @@
+# Python bytecode compilation
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.venv/
+venv/
+ENV/
+
+# Distribution packages
+dist/
+build/
+*.egg-info/
+
+# pytest cache
+.pytest_cache/
+
+# uv.lock is checked in (it's the lockfile for uv/uvsync)
+# uv.lock
+
+# PyPI
+*.whl
